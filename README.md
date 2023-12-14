@@ -50,7 +50,7 @@ python basic_diffvg.py --target target_images/083.png \
 2. [New Emojis](https://github.com/googlefonts/noto-emoji/tree/main/png), take the images from [this](datasets/datasets_metadata/new_emojis_list) list
 3. [Free-SVG](datasets/from-free-svg.zip)
 4. [NFT-Apes](datasets/nft-apes.zip)
-5. [Midjourney Images](datasets/midjourney.zip)
+5. [Midjourney Images](https://drive.google.com/file/d/1U9Vjz5ULUzFE-ythlupVodYIp0E9AERC/view?usp=drive_link)
 
 
 
