@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimize and Reduce: A Top-Down Approach for Image Vectorization</title>
+
+  <!-- Meta tags -->
+  <meta name="keywords" content="Optimize and Reduce: A Top-Down Approach for Image Vectorization">
+  <meta property="og:site_name" content="Optimize and Reduce">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Optimize and Reduce">
+  <meta name="description"
+    content="A Top-Down Approach for Image Vectorization">
+  <meta property="og:description"
+    content="A Top-Down Approach for Image Vectorization">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- <script type="text/javascript" src="https://www.maths.nottingham.ac.uk/plp/pmadw/LaTeXMathML.js"></script> -->
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Optimize and Reduce: A Top-Down Approach for Image Vectorization</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.co.il/citations?user=GgFuT_QAAAAJ&hl=iw&oi=ao">Or Hirschorn*</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=czm6bkUAAAAJ&hl=en&oi=ao">Amir Jevnisek*</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.co.il/citations?hl=iw&user=hpItE1QAAAAJ">Shai Avidan</a>
+              </span>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Tel Aviv University</span>
+            </div>
+
+            <!-- <div>
+              <p style="font-size:23px;font-weight:bold;padding-top: 5px;">CVPR 2023</p>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link.
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                </span>
+                -->
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/ajevnisek/optimize-and-reduce"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div id="teaser" class="has-text-centered">
+          <img style="width: 60%;" src="./static/images/Teaser.png"
+               alt="Optimize and Reduce: A Top-Down Approach for Image Vectorization"
+          >
+        </div>
+
+        <h2 class="subtitle has-text-centered">
+          We propose <span class="method-name">Optimize & Reduce (O&R)</span>, a top-down approach to vectorization that is both fast and domain-agnostic. O&R aims to attain a compact representation of input images by iteratively optimizing Bézier curve parameters and significantly reducing the number of shapes, using a devised importance measure.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Vector image representation is a popular choice when editability and flexibility in resolution are desired. However, most images are only available in raster form, making raster-to-vector image conversion (vectorization) an important task.
+Classical methods for vectorization are either domain-specific or yield an abundance of shapes which limits editability and interpretability.
+Learning-based methods, that use differentiable rendering, have revolutionized vectorization, at the cost of poor generalization to out-of-training distribution domains, and optimization-based counterparts are either slow or produce non-editable and redundant shapes.
+In this work, we propose Optimize & Reduce (O&R), a top-down approach to vectorization that is both fast and domain-agnostic. O&R aims to attain a <b>compact</b> representation of input images by iteratively optimizing Bézier curve parameters and significantly reducing the number of shapes, using a devised importance measure.
+We contribute a benchmark of five datasets comprising images from a broad spectrum of image complexities - from emojis to natural-like images. Through extensive experiments on hundreds of images, we demonstrate that our method is domain agnostic and outperforms existing works in both reconstruction and perceptual quality for a fixed number of shapes. Moreover, we show that our algorithm is x10 faster than the state-of-the-art optimization-based method.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- General Examples -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Results</h2>
+          <h3 class="title is-4">Qualitative Results</h3>
+          <div class="content has-text-justified">
+            <p>
+              Using our method, given a <b>Input</b> image and skeleton we can perform structure-consistent pose estimation on images from unseen categories.
+            </p>
+          </div>
+                  <div class="item has-text-centered">
+                    <img src="./static/images/compare.png" />
+                  </div>
+<!--          <section class="hero is-light is-small">-->
+<!--            <div class="hero-body">-->
+<!--              <div class="container">-->
+<!--                <div id="results-carousel" class="carousel results-carousel">-->
+
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/0_input.png" />-->
+<!--                    <p class="caption"><b>Input</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/0_diffvg.svg" />-->
+<!--                    <p class="caption"><b>DiffVG</b></p>-->
+<!--                    </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/" />-->
+<!--                    <p class="caption"><b>LIVE</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/0_ours.svg" />-->
+<!--                    <p class="caption"><b>Ours</b></p>-->
+<!--                  </div>-->
+
+
+<!--                                    <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/1_input.png" />-->
+<!--                    <p class="caption"><b>Input</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/1_diffvg.svg" />-->
+<!--                    <p class="caption"><b>DiffVG</b></p>-->
+<!--                    </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/" />-->
+<!--                    <p class="caption"><b>LIVE</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/1_ours.svg" />-->
+<!--                    <p class="caption"><b>Ours</b></p>-->
+<!--                  </div>-->
+
+
+
+<!--                                    <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/2_input.png" />-->
+<!--                    <p class="caption"><b>Input</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/2_diffvg.svg" />-->
+<!--                    <p class="caption"><b>DiffVG</b></p>-->
+<!--                    </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/" />-->
+<!--                    <p class="caption"><b>LIVE</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/2_ours.svg" />-->
+<!--                    <p class="caption"><b>Ours</b></p>-->
+<!--                  </div>-->
+
+
+
+<!--                                    <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/3_input.png" />-->
+<!--                    <p class="caption"><b>Input</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/3_diffvg.svg" />-->
+<!--                    <p class="caption"><b>DiffVG</b></p>-->
+<!--                    </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/" />-->
+<!--                    <p class="caption"><b>LIVE</b></p>-->
+<!--                  </div>-->
+<!--                  <div class="item has-text-centered">-->
+<!--                    <img src="./static/images/qualitative/3_ours.svg" />-->
+<!--                    <p class="caption"><b>Ours</b></p>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+<!--              </div>-->
+
+<!--            </div>-->
+<!--          </section>-->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h3 class="title is-4">Image Abstraction</h3>
+          <div class="content has-text-justified">
+            <p>
+
+We demonstrate different levels of abstraction for vectorization tasks, by varying the number of shapes in the output image and by incorporating a CLIP loss as a reconstruction objective.
+            </p>
+                  <div class="item has-text-centered">
+                    <img src="./static/images/abstraction.png" />
+                  </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h3 class="title is-4">Image Interpolation</h3>
+          <div class="content has-text-justified">
+            <p>
+  Our approach does not rely on a GAN to generate interpolated images; instead, it performs interpolation directly in the shapes domain between the source and target images. Our method is preferable as it reflects a realistic scenario where a user wants to interpolate between two emoji images they possess. Our results are achieved without depending on a GAN trained to generate the raster images.
+
+            </p>
+                  <div class="item has-text-centered">
+                    <img src="./static/images/inter.png" />
+                  </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>If you find this research useful, please cite the following:</p>
+
+      <pre><code>
+@inproceedings{DBLP:conf/aaai/OptimizeReduce,
+  author       = {Or Hirchorn and
+                  Amir Jevnisek and
+                  Shai Avidan},
+  title        = {Optimize and Reduce: A Top-Down Approach for Image Vectorization},
+  booktitle    = {{AAAI}},
+  publisher    = {{AAAI} Press},
+  year         = {2024}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <p>
+          This page was adapted from <a href="https://github.com/nerfies/nerfies.github.io">this</a> source code.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
